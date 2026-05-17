@@ -1,0 +1,44 @@
+_format_version: "2.1"
+_transform: true
+
+services:
+
+  - name: auth-service
+    url: http://auth-service:9898
+
+    routes:
+      - name: auth-route
+        paths:
+          - /auth/v1
+
+        strip_path: false
+
+  - name: user-service
+    url: http://user-service:9810
+
+    routes:
+      - name: user-route
+        paths:
+          - /user/v1
+
+        strip_path: false
+
+  - name: expense-service
+    url: http://expense-service:9820
+
+    routes:
+      - name: expense-route
+        paths:
+          - /expense/v1
+
+        strip_path: false
+
+  - name: ds-service
+    url: http://ds-service:8010
+
+    routes:
+      - name: ds-route
+        paths:
+          - /v1/ds
+
+        strip_path: false
